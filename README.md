@@ -47,8 +47,6 @@ Nesta atividade, vamos analisar dois repositórios públicos que implementam o J
 | **Arquivos principais** | `script.js`, `styles.css`, `index.html` | `app.js`, `style.css`, `index.html` |
 | **Complexidade** | Mais simples, interação via DOM | Mais complexo, lógica de IA e renderização via Canvas |
 
-
-
 ---
 
 ## 🛠️ Parte 1 — Criação da Conta no SonarQube Cloud (15 min)
@@ -103,84 +101,47 @@ Ao final, você terá em sua conta:
 4. Na tela **"Set up project for Clean as You Code"**, selecione **"Previous version"** como definição de código novo
 5. Clique em **"Create Project"**
 
-> ⏳ **Aguarde:** O SonarQube Cloud iniciará automaticamente a análise dos projetos. Para repositórios JavaScript hospedados no GitHub, a **Análise Automática** (Automatic Analysis) é utilizada — não é necessário configurar CI/CD. A primeira análise pode levar de 1 a 3 minutos por projeto.
+> ⏳ **Aguarde:** O SonarQube Cloud iniciará automaticamente a análise dos projetos. Para repositórios JavaScript hospedados no GitHub, a **Análise Automática** (Automatic Analysis) é utilizada — não é necessário configurar CI/CD.
 
 ---
 
-## 🔍 Parte 2 — Explorando as Métricas (20 min)
+## 🔍 Parte 2 — Análise das Medidas (Measures) (25 min)
 
-Após a conclusão da análise, explore as métricas de cada projeto seguindo o roteiro abaixo.
+Após a conclusão da análise, concentre a coleta e interpretação de dados na aba **Measures** de cada projeto. A atividade desta parte é tratar as *medidas* como evidências quantitativas para discutir qualidade (confiabilidade, segurança, manutenibilidade, duplicação e complexidade).
 
-### Passo 2.1 — Visão Geral do Projeto (Overview)
+### Passo 2.1 — Aba Measures (Medidas) — Foco em Conceitos de Métricas de Software
 
-1. No menu lateral, clique em **"My Projects"**
-2. Selecione o primeiro projeto (Projeto A: `JavaScript-Tic-Tac-Toe`)
-3. Na página de **Overview**, observe e anote:
+1. Para **cada projeto (A e B)**, acesse o projeto no SonarQube Cloud e clique na aba **"Measures"**.
+2. (Contexto rápido) Registre o status do **Quality Gate** exibido no topo do projeto (se disponível na sua visualização).
+3. Selecione **pelo menos 6 medidas** distribuídas entre as categorias abaixo (mínimo de 1 por categoria, se disponível):
+   - **Confiabilidade (Reliability)**: Bugs, Reliability Rating, esforço de remediação
+   - **Segurança (Security)**: Vulnerabilities, Security Hotspots, Security Rating
+   - **Manutenibilidade (Maintainability)**: Code Smells, Dívida Técnica, Maintainability Rating
+   - **Duplicações (Duplications)**: Duplicated Lines (%), blocos/arquivos com duplicação
+   - **Tamanho e Complexidade**: Lines of Code, Complexidade ciclomática, Complexidade cognitiva
 
-| Item | O que observar |
-|---|---|
-| **Quality Gate** | O projeto passou (Passed) ou falhou (Failed)? |
-| **Bugs** | Quantos bugs foram encontrados? Qual a classificação (A-E)? |
-| **Vulnerabilidades** | Existem vulnerabilidades de segurança? |
-| **Code Smells** | Quantos *code smells* foram identificados? |
-| **Duplicações** | Qual o percentual de código duplicado? |
-| **Dívida Técnica** | Quanto tempo seria necessário para resolver os *code smells*? |
+4. Para **cada medida selecionada**, preencha o registro abaixo (no seu documento de entrega):
 
-4. Repita o processo para o segundo projeto (Projeto B: `Tic-Tac-Toe-JavaScript`)
+**Registro de Medida (modelo obrigatório):**
+- **Nome no SonarQube Cloud:** (ex.: “Code Smells”, “Cognitive Complexity”, “Duplicated Lines (%)”)
+- **O que é medido (definição operacional):** descreva *o que exatamente* o número representa
+- **Unidade / escala:** (contagem, porcentagem, tempo estimado, rating A–E etc.)
+- **Tipo (medida × métrica):**
+  - Indique se é uma **medida direta** (ex.: contagem de bugs) ou uma **métrica derivada/composta** (ex.: rating A–E, dívida técnica agregada)
+- **Interpretação:** o que significa **aumentar/diminuir** esse valor? Isso é sempre “melhor/pior”?
+- **Atributo de qualidade relacionado:** associe a medida a pelo menos **um atributo** (ex.: manutenibilidade, confiabilidade, segurança)
+- **Limitações:** cite **1 limitação** (ex.: falso positivo, depende de regras, não mede comportamento em execução)
 
-### Passo 2.2 — Análise Detalhada de Issues
+5. **Comparação orientada por métricas (obrigatório):**
+   - Escolha **3 medidas** (ex.: Duplications %, Complexidade Cognitiva, Bugs).
+   - Compare A vs. B e explique: **o que a diferença sugere** sobre o produto e **qual decisão** você tomaria (ex.: “qual projeto está mais arriscado para manutenção?”) com base **nos números**.
 
-1. Dentro de cada projeto, clique na aba **"Issues"**
-2. Explore os filtros disponíveis no painel lateral esquerdo:
-   - **Type:** Bug, Vulnerability, Code Smell
-   - **Severity:** Blocker, Critical, Major, Minor, Info
-   - **Status:** Open, Confirmed, Resolved, Closed
-3. Clique em pelo menos **2 issues** de cada projeto e observe:
-   - A **descrição** do problema
-   - A **explicação** de por que aquilo é considerado um problema
-   - A **sugestão de correção** oferecida pelo SonarQube
-   - O **trecho de código** onde o problema foi detectado
+6. **Relação com Quality Gate (obrigatório):**
+   - Identifique se o projeto passou/falhou no **Quality Gate**.
+   - Aponte **quais medidas** parecem mais relacionadas ao resultado (mesmo que você não veja todas as condições).
+   - Explique por que **limiares (thresholds)** são importantes em métricas de qualidade (ex.: evitar regressão, padronizar critérios de aceitação).
 
-> 📝 **Anote:** Para cada issue analisada, registre o tipo, a severidade e se você concorda com a recomendação da ferramenta.
-
-### Passo 2.3 — Aba Measures (Medidas)
-
-1. Clique na aba **"Measures"** no menu do projeto
-2. Explore as seguintes categorias:
-
-**Confiabilidade (Reliability):**
-- Quantidade de bugs
-- Rating de confiabilidade
-- Esforço de remediação
-
-**Manutenibilidade (Maintainability):**
-- Quantidade de *code smells*
-- Dívida técnica (em minutos/horas)
-- Rating de manutenibilidade
-
-**Segurança (Security):**
-- Vulnerabilidades
-- Security Hotspots (pontos que exigem revisão manual)
-
-**Duplicações:**
-- Percentual de linhas duplicadas
-- Blocos duplicados
-- Arquivos com duplicação
-
-**Tamanho e Complexidade:**
-- Linhas de código (Lines of Code)
-- Complexidade ciclomática
-- Complexidade cognitiva
-
-### Passo 2.4 — Explorar o Código (Code Tab)
-
-1. Clique na aba **"Code"**
-2. Navegue pela estrutura de arquivos do projeto
-3. Observe as métricas exibidas ao lado de cada arquivo:
-   - Quantidade de issues
-   - Linhas de código
-   - Percentual de duplicação
-4. Clique em um arquivo `.js` para ver os problemas marcados diretamente no código-fonte
+> ✅ **Dica didática:** trate “Measures” como o conjunto de **dados quantitativos** usados para justificar conclusões sobre qualidade. Evite afirmações vagas (“é melhor”) sem conectar a uma medida específica.
 
 ---
 
@@ -188,7 +149,7 @@ Após a conclusão da análise, explore as métricas de cada projeto seguindo o 
 
 ### Passo 3.1 — Preencher a Tabela Comparativa
 
-Com base nas métricas coletadas, preencha a tabela abaixo:
+Com base nas métricas coletadas em **Measures**, preencha a tabela abaixo:
 
 | Métrica | Projeto A | Projeto B |
 |---|---|---|
@@ -207,32 +168,29 @@ Com base nas métricas coletadas, preencha a tabela abaixo:
 
 ### Passo 3.2 — Responder às Questões de Análise
 
-Responda às seguintes questões com base nos dados coletados. Entregue suas respostas em um documento de texto ou diretamente no ambiente de aprendizagem da disciplina.
+Responda às seguintes questões **exclusivamente com base nas informações disponíveis na aba _Measures_** (e, quando necessário, no indicador de **Quality Gate** no topo do projeto). Entregue suas respostas em um documento de texto ou diretamente no ambiente de aprendizagem da disciplina.
 
-**Questão 1 — Comparação Quantitativa**
-> Qual dos dois projetos apresentou melhores métricas gerais de qualidade? Justifique sua resposta comparando pelo menos três métricas diferentes.
+**Questão 1 — Comparação Quantitativa (baseada em Measures)**
+> Considerando pelo menos **3 medidas** (ex.: *Bugs*, *Technical Debt*, *Duplicated Lines (%)*, *Cognitive Complexity*, *Security Hotspots*), qual projeto apresenta melhor qualidade **para manutenção futura**? Justifique conectando **valores → interpretação → decisão**.
 
-**Questão 2 — Code Smells**
-> Selecione um *code smell* encontrado em um dos projetos. Descreva: (a) qual é o problema apontado, (b) por que ele é considerado um *code smell*, e (c) como você corrigiria o código.
+**Questão 2 — Medida vs. Métrica Derivada**
+> Escolha **2 itens** do _Measures_: um que você considere **medida direta** (contagem/percentual/linhas/tempo) e outro que seja **métrica derivada/composta** (ex.: *ratings A–E*). Explique:
+> (a) por que cada um se encaixa nessa categoria e  
+> (b) que cuidado você teria ao comparar projetos usando esse item.
 
-**Questão 3 — Complexidade**
-> Compare a complexidade ciclomática dos dois projetos. É esperado que um deles seja mais complexo que o outro? Por quê? A complexidade adicional é justificável?
+**Questão 3 — Complexidade e Risco**
+> Compare **Complexidade Ciclomática** e **Complexidade Cognitiva** entre os projetos. O que cada uma sugere sobre:
+> (a) esforço de entendimento do código e  
+> (b) probabilidade de defeitos ao modificar funcionalidades?
 
-**Questão 4 — Duplicação de Código**
-> Algum dos projetos apresentou duplicação de código? Se sim, qual seria o impacto dessa duplicação na manutenibilidade a longo prazo?
+**Questão 4 — Duplicação e Impacto na Manutenibilidade**
+> Analise *Duplicated Lines (%)* e ao menos uma medida de tamanho (ex.: *Lines of Code*). A duplicação observada é “alta” ou “baixa” **no contexto do tamanho do projeto**? Que impacto isso pode gerar em correções e evolução?
 
-**Questão 5 — Limitações da Análise Estática**
-> A análise estática é suficiente para avaliar completamente a qualidade de um software? Quais aspectos da qualidade **não** são cobertos por ferramentas como o SonarQube? Cite pelo menos dois exemplos.
+**Questão 5 — Quality Gate e Limiar (Threshold)**
+> Verifique se cada projeto **Passou/Falhou** no **Quality Gate**. Proponha um **mini–Quality Gate** (3 condições) para estes projetos (ex.: limite de bugs, limite de duplicação, limite de complexidade/ dívida técnica) e justifique por que esses **limiares** são úteis para padronizar qualidade e evitar regressões.
 
-**Questão 6 — Quality Gate**
-> Explique o conceito de Quality Gate. Ambos os projetos passaram? Se algum falhou, quais condições não foram atendidas?
-
-### Passo 3.3 — Reflexão Final
-
-Escreva um parágrafo (5 a 10 linhas) refletindo sobre:
-- A importância da análise estática no ciclo de desenvolvimento de software
-- Como ferramentas como o SonarQube Cloud podem ser integradas a um fluxo de trabalho com CI/CD
-- Em que momento do desenvolvimento a análise estática deveria ser aplicada e por quê
+**Questão 6 — Limitações das Medidas**
+> Aponte **2 limitações** de avaliar qualidade apenas por _Measures_ (ex.: dependência de regras, falsos positivos/negativos, ausência de comportamento em execução). Em seguida, cite **2 práticas complementares** (ex.: testes, revisão de código, análise dinâmica) que ajudariam a reduzir o risco de conclusões equivocadas.
 
 ---
 
@@ -242,11 +200,10 @@ Ao final da atividade, cada aluno (ou dupla) deve entregar:
 
 1. **Tabela comparativa** preenchida (Passo 3.1)
 2. **Respostas** às 6 questões de análise (Passo 3.2)
-3. **Reflexão final** (Passo 3.3)
-4. **Capturas de tela** (screenshots) do dashboard de cada projeto no SonarQube Cloud, mostrando:
-   - A visão geral (Overview)
-   - A aba de Issues com pelo menos um issue expandido
-   - A aba de Measures
+3. **Registros de Medidas (Passo 2.1)** preenchidos (modelo obrigatório) para **cada projeto**
+4. **Capturas de tela** (screenshots) evidenciando as informações usadas na análise, contendo:
+   - A aba **Measures** de cada projeto (com as medidas selecionadas visíveis)
+   - (Opcional, se aparecer na mesma tela) indicação de **Quality Gate** do projeto
 
 ---
 
@@ -273,16 +230,3 @@ Ao final da atividade, cada aluno (ou dupla) deve entregar:
 
 ---
 
-## ✅ Critérios de Avaliação
-
-| Critério | Peso |
-|---|---|
-| Tabela comparativa corretamente preenchida | 20% |
-| Qualidade e profundidade das respostas às questões | 40% |
-| Reflexão final demonstrando compreensão do tema | 20% |
-| Capturas de tela adequadas | 10% |
-| Organização e clareza do documento entregue | 10% |
-
----
-
-> **Bom trabalho!** 🚀 Ao concluir esta atividade, você terá experiência prática com uma das ferramentas de análise estática mais utilizadas no mercado e compreenderá como métricas de qualidade podem guiar decisões de engenharia de software.
