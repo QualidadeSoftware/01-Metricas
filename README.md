@@ -112,15 +112,14 @@ Após a conclusão da análise, concentre a coleta e interpretação de dados na
 ### Passo 2.1 — Aba Measures (Medidas) — Foco em Conceitos de Métricas de Software
 
 1. Para **cada projeto (A e B)**, acesse o projeto no SonarQube Cloud e clique na aba **"Measures"**.
-2. (Contexto rápido) Registre o status do **Quality Gate** exibido no topo do projeto (se disponível na sua visualização).
-3. Selecione **pelo menos 6 medidas** distribuídas entre as categorias abaixo (mínimo de 1 por categoria, se disponível):
+2. Selecione **pelo menos 6 medidas** distribuídas entre as categorias abaixo (mínimo de 1 por categoria, se disponível):
    - **Confiabilidade (Reliability)**: Bugs, Reliability Rating, esforço de remediação
    - **Segurança (Security)**: Vulnerabilities, Security Hotspots, Security Rating
    - **Manutenibilidade (Maintainability)**: Code Smells, Dívida Técnica, Maintainability Rating
    - **Duplicações (Duplications)**: Duplicated Lines (%), blocos/arquivos com duplicação
    - **Tamanho e Complexidade**: Lines of Code, Complexidade ciclomática, Complexidade cognitiva
 
-4. Para **cada medida selecionada**, preencha o registro abaixo (no seu documento de entrega):
+3. Para **cada medida selecionada**, preencha o registro abaixo (no seu documento de entrega):
 
 **Registro de Medida (modelo obrigatório):**
 - **Nome no SonarQube Cloud:** (ex.: “Code Smells”, “Cognitive Complexity”, “Duplicated Lines (%)”)
@@ -132,7 +131,7 @@ Após a conclusão da análise, concentre a coleta e interpretação de dados na
 - **Atributo de qualidade relacionado:** associe a medida a pelo menos **um atributo** (ex.: manutenibilidade, confiabilidade, segurança)
 - **Limitações:** cite **1 limitação** (ex.: falso positivo, depende de regras, não mede comportamento em execução)
 
-5. **Comparação orientada por métricas (obrigatório):**
+4. **Comparação orientada por métricas (obrigatório):**
    - Escolha **3 medidas** (ex.: Duplications %, Complexidade Cognitiva, Bugs).
    - Compare A vs. B e explique: **o que a diferença sugere** sobre o produto e **qual decisão** você tomaria (ex.: “qual projeto está mais arriscado para manutenção?”) com base **nos números**.
 
@@ -181,11 +180,6 @@ Responda às seguintes questões **exclusivamente com base nas informações dis
 **Questão 4 — Duplicação e Impacto na Manutenibilidade**
 > Analise *Duplicated Lines (%)* e ao menos uma medida de tamanho (ex.: *Lines of Code*). A duplicação observada é “alta” ou “baixa” **no contexto do tamanho do projeto**? Que impacto isso pode gerar em correções e evolução?
 
-**Questão 5 — Quality Gate e Limiar (Threshold)**
-> Verifique se cada projeto **Passou/Falhou** no **Quality Gate**. Proponha um **mini–Quality Gate** (3 condições) para estes projetos (ex.: limite de bugs, limite de duplicação, limite de complexidade/ dívida técnica) e justifique por que esses **limiares** são úteis para padronizar qualidade e evitar regressões.
-
-**Questão 6 — Limitações das Medidas**
-> Aponte **2 limitações** de avaliar qualidade apenas por _Measures_ (ex.: dependência de regras, falsos positivos/negativos, ausência de comportamento em execução). Em seguida, cite **2 práticas complementares** (ex.: testes, revisão de código, análise dinâmica) que ajudariam a reduzir o risco de conclusões equivocadas.
 
 ---
 
@@ -194,7 +188,7 @@ Responda às seguintes questões **exclusivamente com base nas informações dis
 Ao final da atividade, cada aluno (ou dupla) deve entregar:
 
 1. **Tabela comparativa** preenchida (Passo 3.1)
-2. **Respostas** às 6 questões de análise (Passo 3.2)
+2. **Respostas** às 4 questões de análise (Passo 3.2)
 3. **Registros de Medidas (Passo 2.1)** preenchidos (modelo obrigatório) para **cada projeto**
 4. **Capturas de tela** (screenshots) evidenciando as informações usadas na análise, contendo:
    - A aba **Measures** de cada projeto (com as medidas selecionadas visíveis)
