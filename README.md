@@ -136,10 +136,6 @@ Após a conclusão da análise, concentre a coleta e interpretação de dados na
    - Escolha **3 medidas** (ex.: Duplications %, Complexidade Cognitiva, Bugs).
    - Compare A vs. B e explique: **o que a diferença sugere** sobre o produto e **qual decisão** você tomaria (ex.: “qual projeto está mais arriscado para manutenção?”) com base **nos números**.
 
-6. **Relação com Quality Gate (obrigatório):**
-   - Identifique se o projeto passou/falhou no **Quality Gate**.
-   - Aponte **quais medidas** parecem mais relacionadas ao resultado (mesmo que você não veja todas as condições).
-   - Explique por que **limiares (thresholds)** são importantes em métricas de qualidade (ex.: evitar regressão, padronizar critérios de aceitação).
 
 > ✅ **Dica didática:** trate “Measures” como o conjunto de **dados quantitativos** usados para justificar conclusões sobre qualidade. Evite afirmações vagas (“é melhor”) sem conectar a uma medida específica.
 
@@ -153,7 +149,6 @@ Com base nas métricas coletadas em **Measures**, preencha a tabela abaixo:
 
 | Métrica | Projeto A | Projeto B |
 |---|---|---|
-| Quality Gate (Passed/Failed) | | |
 | Linhas de Código | | |
 | Bugs (quantidade) | | |
 | Rating de Confiabilidade (A-E) | | |
@@ -168,7 +163,7 @@ Com base nas métricas coletadas em **Measures**, preencha a tabela abaixo:
 
 ### Passo 3.2 — Responder às Questões de Análise
 
-Responda às seguintes questões **exclusivamente com base nas informações disponíveis na aba _Measures_** (e, quando necessário, no indicador de **Quality Gate** no topo do projeto). Entregue suas respostas em um documento de texto ou diretamente no ambiente de aprendizagem da disciplina.
+Responda às seguintes questões **exclusivamente com base nas informações disponíveis na aba _Measures_** . Entregue suas respostas em um documento de texto na atribuicão da tarefa no _TEAMS_.
 
 **Questão 1 — Comparação Quantitativa (baseada em Measures)**
 > Considerando pelo menos **3 medidas** (ex.: *Bugs*, *Technical Debt*, *Duplicated Lines (%)*, *Cognitive Complexity*, *Security Hotspots*), qual projeto apresenta melhor qualidade **para manutenção futura**? Justifique conectando **valores → interpretação → decisão**.
@@ -203,8 +198,7 @@ Ao final da atividade, cada aluno (ou dupla) deve entregar:
 3. **Registros de Medidas (Passo 2.1)** preenchidos (modelo obrigatório) para **cada projeto**
 4. **Capturas de tela** (screenshots) evidenciando as informações usadas na análise, contendo:
    - A aba **Measures** de cada projeto (com as medidas selecionadas visíveis)
-   - (Opcional, se aparecer na mesma tela) indicação de **Quality Gate** do projeto
-
+   
 ---
 
 ## ⚠️ Solução de Problemas Comuns
